@@ -1,0 +1,7 @@
+[package]
+name = "you/roblox-obby-pro"
+version = "0.1.0"
+realm = "shared"
+
+[dependencies]
+Signal = "sleitnick/signal@^1"
