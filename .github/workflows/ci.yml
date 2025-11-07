@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Aftman (tool manager), then the tools from .aftman.toml
+      - name: Install Aftman
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/LPGhatguy/aftman/main/scripts/install.sh | bash -s -- -b "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          aftman --version
+      - name: Install tools (Stylua, Selene, Rojo, Wally)
+        run: aftman install
+
+      - name: Stylua check
+        run: ~/.aftman/bin/stylua --check .
+
+      - name: Selene lint
+        run: ~/.aftman/bin/selene src
+
+      - name: Wally install (validate deps)
+        run: ~/.aftman/bin/wally install
