@@ -1,0 +1,14 @@
+# Wally
+Packages/
+wally.lock
+
+# Build/output
+/build/
+/out/
+/dist/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.rbxl
+*.rbxlx
