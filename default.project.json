@@ -1,0 +1,22 @@
+{
+  "name": "RobloxObbyPro",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Obby": { "$path": "src/ReplicatedStorage/Obby" },
+      "Packages": { "$path": "Packages" }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "ObbyServer": { "$path": "src/ServerScriptService/ObbyServer.server.lua" }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "ObbyHUD": { "$path": "src/StarterPlayer/StarterPlayerScripts/ObbyHUD.client.lua" }
+      }
+    }
+  }
+}
